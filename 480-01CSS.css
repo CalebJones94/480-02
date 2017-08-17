@@ -1,0 +1,31 @@
+table, th, td {
+    border: 1px solid black;
+	border-collapse:collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+th {
+    text-align: center;
+}
+tr#Moonlight {
+    background-color: #792C9D;
+    color:#2189BA;
+}
+tr#Nocturnal {
+    background-color: #000000;
+    color:#E21326;
+}
+tr#Hell {
+    background-color: #D8A54B;
+    color:#FFFFFF;
+}
+tr#Arrival {
+    background-color: #65717E;
+    color:#FFFFFF;
+}
+tr#Green {
+    background-color: #0C6950;
+    color:#7CE7CA;
+}
