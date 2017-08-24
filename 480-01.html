@@ -4,6 +4,22 @@
 <link rel="stylesheet" href="480-01CSS.css">
 <title> About Me </title>
 </head>
+  <script>
+function search(movieName){
+var input, table, tr, td, i;
+table = document.getElementById('movieTable');
+input = movieName;
+tr = table.getElementsByTagName("tr");
+for(i=1; i<tr.length; i++){
+	td = tr[i].getElementsByTagName("td")[1];
+	if(td){
+		if(td==movieName){
+	return movieName + " Directed By: " + td[2] + " Release Date; " +td[3];
+	}
+}
+return "Movie is not in list";
+}
+</script>
 <body>
 <h1 style="font-family:Trebuchet">About Me</h1>
 <p>Senior at ECSU. Majoring in <strong>Computer Science</strong> with a minor in <strong>Mathematics.</strong></p>
@@ -15,7 +31,7 @@
 <button document.getElementById("movieInfo").innerHTML = search();> Search </button>
 
 <p id="movieInfo"></p>
-<table>
+<table id="movieTable">
 <tr>
 <th colspan="2">Movie</th>
 <th>Director</th>
