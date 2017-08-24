@@ -3,32 +3,41 @@
 <head>
 <link rel="stylesheet" href="480-01CSS.css">
 <title> About Me </title>
-</head>
-  <script>
-function search(movieName){
+
+<script>
+function search(){
+var movieName = document.getElementById("movieName").value;
 var input, table, tr, td, i;
 table = document.getElementById('movieTable');
-input = movieName;
 tr = table.getElementsByTagName("tr");
+
 for(i=1; i<tr.length; i++){
-	td = tr[i].getElementsByTagName("td")[1];
+	td = tr[i].getElementsByTagName("th");
+	console.log(td[1].innerText);
 	if(td){
-		if(td==movieName){
-	return document.getElementById("movieInfo").innerHTML = movieName + " Directed By: " + td[2] + " Release Date; " +td[3];
+		if(td[1].innerText==movieName){
+			document.getElementById("movieInfo").innerHTML = movieName + " Directed By: " + td[2].innerText + " Release Date: " +td[3].innerText;
+			return;
+		}
 	}
 }
-return "Movie is not in list";
+
+document.getElementById("movieInfo").innerHTML = "Movie is not in list";
+
 }
 </script>
+
+
+</head>
 <body>
 <h1 style="font-family:Trebuchet">About Me</h1>
 <p>Senior at ECSU. Majoring in <strong>Computer Science</strong> with a minor in <strong>Mathematics.</strong></p>
 <h2 style="font-family:Georgia">Top 5 Movies of 2016</h2>
 <p>Listed below are my personal top five movies of 2016.</p>
-<br>  
 <br>
-<input type="text" name="search" placeholder="Type in a movie">
-<button onclick = search(movieName)> Search </button>
+<br>
+<input type="text" id="movieName" placeholder="Type in a movie">
+<button onclick="search()"> Search </button>
 
 <p id="movieInfo"></p>
 <table id="movieTable">
