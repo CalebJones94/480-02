@@ -14,7 +14,7 @@ for(i=1; i<tr.length; i++){
 	td = tr[i].getElementsByTagName("td")[1];
 	if(td){
 		if(td==movieName){
-	return movieName + " Directed By: " + td[2] + " Release Date; " +td[3];
+	return document.getElementById("movieInfo").innerHTML = movieName + " Directed By: " + td[2] + " Release Date; " +td[3];
 	}
 }
 return "Movie is not in list";
@@ -28,7 +28,7 @@ return "Movie is not in list";
 <br>  
 <br>
 <input type="text" name="search" placeholder="Type in a movie">
-<button document.getElementById("movieInfo").innerHTML = search();> Search </button>
+<button onclick = search(movieName)> Search </button>
 
 <p id="movieInfo"></p>
 <table id="movieTable">
